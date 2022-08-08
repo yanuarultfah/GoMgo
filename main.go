@@ -8,8 +8,8 @@ import (
 
 func main() {
 	app := fiber.New()
-	app.Get("/:name", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("Hello GO")
+	app.Post("/todo", func(c *fiber.Ctx) error {
+		var todo entity.todo
 	})
 	app.Listen(":3000")
 	fmt.Println("Connect GO")
