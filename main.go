@@ -10,6 +10,7 @@ func main() {
 	app := fiber.New()
 	app.Post("/todo", func(c *fiber.Ctx) error {
 		var todo entity.todo
+		err := c.BodyParser(&todo)
 	})
 	app.Listen(":3000")
 	fmt.Println("Connect GO")
